@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact form</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gom6xgx.css" />
+
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <a href="index.html"><li>Home</li></a>
+        <a href="contact.html"><li>Contact</li></a>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <a class="back-button" href="index.html">Back to home</a>
+
+    <form class="theform" id="contactForm">
+      <h2 class="gzValidate">Congratulations, the form passed validation!</h2>
+      <div class="formitem">
+        <label for="name">Name: (required)</label>
+        <input type="text" name="name" id="name" />
+        <div class="form-error" id="nameError">Please enter your name</div>
+      </div>
+
+      <div class="formitem">
+        <label for="subject">Subject: (Must have at least 10 characters)</label>
+        <input type="text" name="subject" id="subject" />
+        <div class="form-error" id="subjectError">
+          You must add at least 10 characters
+        </div>
+      </div>
+
+      <div class="formitem">
+        <label for="email">Email: (required)</label>
+        <input name="email" id="email" />
+        <div class="form-error" id="emailError">
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div class="formitem">
+        <label for="address">Address: (Must have at least 25 characters)</label>
+        <input type="text" name="address" id="address" />
+        <div class="form-error" id="addressError">
+          Please enter an address with at least 25 characters
+        </div>
+      </div>
+
+      <button class="formbutton">Submit</button>
+    </form>
+
+    <script src="js/contactform.js"></script>
+  </body>
+</html>
+l

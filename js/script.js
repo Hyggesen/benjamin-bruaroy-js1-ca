@@ -1,5 +1,4 @@
-const url =
-  "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+const url = "https://restcountries.eu/rest/v2/";
 
 console.log(url);
 
@@ -11,17 +10,23 @@ async function makeApiCall() {
     const results = await response.json();
     console.log(results);
 
-    for (let i = 0; i < results.length; i++) {
+    resultsContainer.innerHTML = "";
+
+    for (let i = 0; i < 20; i++) {
       resultsContainer.innerHTML += `
-    <div class="card">
-    <img src=${results[i].image_link}>
+    <a href="details.html?alpha2Code=${results[i].alpha2Code}" class="card">
     <h2 class="name">${results[i].name}</h2>
-    <p class="price"> ${results[i].price}</p>
-    </div>
+    <img src=${results[i].flag}>
+    <p class="population">Population: <br><span>${results[i].population}</span></p>
+    </a>
     `;
     }
-  } catch {
-    console.log("ERROR");
+  } catch (error) {
+    console.log(error);
+
+    resultsContainer.innerHTML = displayError(
+      "We're sorry, but an error occured"
+    );
   }
 }
 
